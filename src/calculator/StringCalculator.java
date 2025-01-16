@@ -2,7 +2,8 @@ package calculator;
 
 public class StringCalculator {
 
-    public int add(String numbers){
+    public int add(String num){
+        String numbers = num.trim();
         if(numbers.length()==0){
             return 0;
         }
@@ -17,8 +18,8 @@ public class StringCalculator {
         String[] substrings = numbers.split(regex);
         int result = 0;
         for(String substring: substrings){
-            if(substring.contains( "\n")){
-                result+=getSumWithSeperater(numbers, "\n");
+            if(substring.contains("\n")){
+                result+=getSumWithSeperater(substring, "\n");
             } else {
                 result+=Integer.parseInt(substring);
             }
