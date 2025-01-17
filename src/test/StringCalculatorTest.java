@@ -21,11 +21,13 @@ public class StringCalculatorTest {
         assertThat(addResultOf("//[**][$$$]\n1**3$$$6"),CoreMatchers.is(10));
         assertThat(addResultOf("//[***]\n1***2***3"),CoreMatchers.is(6));
         assertThat(addResultOf("//;\n1;3;1001"),CoreMatchers.is(4));
+        assertThat(addResultOf("“//[*][%]\n15*299%336"),CoreMatchers.is(650));
+        assertThat(addResultOf("“//[*][%][##]\n981*258%133##82"),CoreMatchers.is(1454));
 //        assertThat(addResultOf("//[**][$$$]\n1**-3$$$-6"),CoreMatchers.is(10));
 //        assertThat(addResultOf("//;\n1;-3;-1"),CoreMatchers.is(4));
 
 
-        System.out.println("Count of calls to calculator : "+stringCalculator.getCount());
+        System.out.println("Count of calls to calculator : "+stringCalculator.GetCalledCount());
     }
 
     private int addResultOf(String numbers){

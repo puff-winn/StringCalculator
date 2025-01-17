@@ -13,6 +13,7 @@ public class StringCalculator {
 
     Set<Integer> validIntegers = Set.of(1,2,3,4,5,6,7,8,9);
 
+    // init method
     public int add(String num){
         count++;
         String numbers = num.trim();
@@ -28,6 +29,7 @@ public class StringCalculator {
         }
     }
 
+    // logic encompassing calculations with delimeters
     private int getCalculationWithDelimeter(String numbers) {
         String delimitedString = numbers.substring(2);
         String[] splitSubstrings = delimitedString.split("\n");
@@ -40,6 +42,7 @@ public class StringCalculator {
         return getSumWithSeperater(number, delimiterString);
     }
 
+    // fetching all the delimeters present in the input string
     public Set<String> getDelimitersInsideRegex(String input) {
         Set<String> extractedStrings = new HashSet<>();
         Pattern pattern = Pattern.compile("\\[([^]]+)\\]");
@@ -52,6 +55,7 @@ public class StringCalculator {
         return extractedStrings;
     }
 
+    // calculate sum when delimeters are present
     private int getSumWithDelimeter(String numbers, Set<String> regexes){
         int result = 0;
         int n = numbers.length();
@@ -89,12 +93,7 @@ public class StringCalculator {
         return result;
     }
 
-    private void isNegativePresent(StringBuilder negativeStrings, String currNumber) {
-        if(Integer.parseInt(currNumber.toString())<0){
-            negativeStrings.append(currNumber+",");
-        }
-    }
-
+    // calculating sum in case of comma and new line seperated numbers
     private int getSumWithSeperater(String numbers, String regex) {
         String[] substrings = numbers.split(regex);
         int result = 0;
@@ -114,6 +113,7 @@ public class StringCalculator {
         return result;
     }
 
+    // calculating final result of summation
     private int getResult(int result, String substring) {
         int currentSubstring = Integer.parseInt(substring);
         if(currentSubstring<=1000){
@@ -122,7 +122,15 @@ public class StringCalculator {
         return result;
     }
 
-    public int getCount(){
+    // checking if negative is present int the number
+    private void isNegativePresent(StringBuilder negativeStrings, String currNumber) {
+        if(Integer.parseInt(currNumber.toString())<0){
+            negativeStrings.append(currNumber+",");
+        }
+    }
+
+    // fetching the total count when add is called in one iteration
+    public int GetCalledCount(){
         return count;
     }
 }
