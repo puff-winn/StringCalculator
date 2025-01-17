@@ -18,6 +18,7 @@ public class StringCalculatorTest {
         assertThat(addResultOf("1,2"),CoreMatchers.is(3));
         assertThat(addResultOf("1\n2,3"),CoreMatchers.is(6));
         assertThat(addResultOf("//;\n1;3"),CoreMatchers.is(4));
+        assertThat(addResultOf("//[**][$$$]\n1**3$$$6"),CoreMatchers.is(10));
 
     }
 
