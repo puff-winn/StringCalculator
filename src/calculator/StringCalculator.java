@@ -11,8 +11,6 @@ public class StringCalculator {
 
     int count = 0;
 
-    Set<Integer> validIntegers = Set.of(1,2,3,4,5,6,7,8,9);
-
     // init method
     public int add(String num){
         count++;
