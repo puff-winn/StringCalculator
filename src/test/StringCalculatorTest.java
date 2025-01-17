@@ -19,7 +19,13 @@ public class StringCalculatorTest {
         assertThat(addResultOf("1\n2,3"),CoreMatchers.is(6));
         assertThat(addResultOf("//;\n1;3"),CoreMatchers.is(4));
         assertThat(addResultOf("//[**][$$$]\n1**3$$$6"),CoreMatchers.is(10));
+        assertThat(addResultOf("//[***]\n1***2***3"),CoreMatchers.is(6));
+        assertThat(addResultOf("//;\n1;3;1001"),CoreMatchers.is(4));
+//        assertThat(addResultOf("//[**][$$$]\n1**-3$$$-6"),CoreMatchers.is(10));
+//        assertThat(addResultOf("//;\n1;-3;-1"),CoreMatchers.is(4));
 
+
+        System.out.println("Count of calls to calculator : "+stringCalculator.getCount());
     }
 
     private int addResultOf(String numbers){
